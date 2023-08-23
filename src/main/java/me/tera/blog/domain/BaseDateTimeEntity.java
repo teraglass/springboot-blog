@@ -24,11 +24,11 @@ import java.time.LocalDateTime;
 public abstract class BaseDateTimeEntity {
 	@CreatedDate
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd kk:mm:ss", timezone = "Asia/Seoul")
-	@Column(name = "created_date")
-	private LocalDateTime createdDate;
+	@Column(name = "created_at",updatable = false)
+	private LocalDateTime createdAt;
 
 	@LastModifiedDate
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd kk:mm:ss", timezone = "Asia/Seoul")
-	@Column(name = "updated_date")
-	private LocalDateTime updatedDate;
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
 }
